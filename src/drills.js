@@ -49,9 +49,9 @@ itemsAddedAfterDate(3);
 function totalCostForEachCategory(){
   knexInstance
     .select( 'category')
-    .sum('price')
     .from('shopping_list')
     .groupBy('category')
+    .sum('price')
     .then(result => {
       console.log(result);
     });
